@@ -15,7 +15,6 @@ export default defineConfig({
             '@pages': path.resolve('./src/pages'),
             '@layout': path.resolve('./src/layout'),
             '@redux': path.resolve('./src/redux')
-            // Add more aliases for other directories as needed
         }
     },
     plugins: [
@@ -33,16 +32,17 @@ export default defineConfig({
             }
         }
     },
-    base: '/',
+    base: './', // Set base to relative path for production
 
     // The root directory of the project.
     root: './',
 
     // Specify the directory for the built files.
     build: {
-        outDir: 'dist',
+        outDir: 'dist', // Vercel expects 'dist' as the output directory
         sourcemap: false,
-        minify: true
+        minify: true,
+        assetsDir: 'assets', // Ensure assets are stored correctly
     },
 
     // Configure the development server.
