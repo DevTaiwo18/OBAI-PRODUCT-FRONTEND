@@ -10,12 +10,6 @@
       }
   ],
   "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-  ],
-  "routes": [
-      {
-          "src": "/(.*)",
-          "dest": "/index.html"
-      }
+      { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
