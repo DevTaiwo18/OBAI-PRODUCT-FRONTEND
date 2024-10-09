@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Col, Row, Spinner, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/images/logo.svg';
+import logo from '@images/logo.svg';
 import Input from '../../components/Input/Input';
 import * as Yup from 'yup';
 import { Form as FormikForm, Formik } from 'formik';

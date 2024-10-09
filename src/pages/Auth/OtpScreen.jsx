@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import OtpInput from './OtpComponent';
-import logo from '../../assets/images/logo.svg';
+import logo from '@images/logo.svg';
 import axiosWrapper from '../../utils/api';
 import { toast } from 'react-toastify';
 import { addIdForOtpUser } from '../../redux/auth/auth_slice';

@@ -1,7 +1,7 @@
 @import '@constants/typography.scss';
 
 .landing {
-    background-image: url('../../assets/images/car_dashboard.jpg');
+    background-image: url('@images/car_dashboard.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;

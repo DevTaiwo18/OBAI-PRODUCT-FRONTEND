@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/images/logo.svg';
+import logo from '@images/logo.svg';
 import { Helmet } from 'react-helmet';
 import { Button, Card, Col, Row, Spinner } from 'react-bootstrap';
 import Input from '../../components/Input/Input';

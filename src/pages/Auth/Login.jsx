@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Button, Col, Row, Spinner, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/logos/OBAI_Branding_FullColorLogo.png'; // Use the updated logo path
+import logo from '@logos/OBAI_Branding_FullColorLogo.png'; // Use the updated logo path
 import Input from '@components/Input/Input';
 import * as Yup from 'yup';
 import { Form as FormikForm, Formik } from 'formik';
