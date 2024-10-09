@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ViewClaimHeader from '../../components/ViewClaimHeader/ViewClaimHeader';
 import { Accordion, Col, Container, Form, Row } from 'react-bootstrap';
 import './ViewClaims.scss';
-import edit from '../../assets/icons/claim/edit.png';
+import edit from '@icons/claim/edit.png';
 import tick from '@icons/tick.svg';
 import ArchiveModal from '../../components/Modal/ArchiveModal/ArchiveModal';
 import { useLocation } from 'react-router-dom';

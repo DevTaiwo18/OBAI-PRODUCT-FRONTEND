@@ -130,14 +130,14 @@
             box-shadow: none;
         }
         .accordion-button:not(.collapsed)::after {
-            background-image: url('../../assets/icons/arrow-up.svg');
+            background-image: url('@icons/arrow-up.svg');
             background-size: 15px;
             position: relative;
             top: -4px;
         }
 
         .accordion-button.collapsed::after {
-            background-image: url('../../assets/icons/arrow-up.svg');
+            background-image: url('@icons/arrow-up.svg');
             background-size: 15px;
             position: relative;
             top: 6px;
