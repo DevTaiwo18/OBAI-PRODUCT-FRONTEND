@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
+
 // https://vitejs.dev/config/
 export default defineConfig({
     resolve: {
@@ -18,7 +19,7 @@ export default defineConfig({
     },
     plugins: [
         react({
-            jsxRuntime: 'classic' // Add this line
+            jsxRuntime: 'classic' // Using classic JSX runtime
         })
     ],
     esbuild: {
@@ -38,7 +39,7 @@ export default defineConfig({
 
     // Specify the directory for the built files.
     build: {
-        outDir: 'build',
+        outDir: 'dist', // Changed 'build' to 'dist' as Vercel expects 'dist'
         sourcemap: false,
         minify: true
     },
