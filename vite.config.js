@@ -19,33 +19,27 @@ export default defineConfig({
   },
   plugins: [
     react({
-      jsxRuntime: 'classic' // Using classic JSX runtime
-    })
+      jsxRuntime: 'classic', // Using classic JSX runtime
+    }),
   ],
   esbuild: {
-    loader: 'jsx'
+    loader: 'jsx',
   },
   optimizeDeps: {
     esbuildOptions: {
       loader: {
-        '.js': 'jsx'
-      }
-    }
+        '.js': 'jsx',
+      },
+    },
   },
-  base: './',  // Set base to the current directory to correctly resolve assets
-  // The root directory of the project.
-  root: './',
-
-  // Specify the directory for the built files.
+  base: './', // Set base to current directory to correctly resolve assets in production
   build: {
-    outDir: 'dist', // Vercel expects 'dist' directory
+    outDir: 'dist', // Vercel expects the output folder to be 'dist'
     sourcemap: false,
-    minify: true
+    minify: true,
   },
-
-  // Configure the development server.
   server: {
     port: 3000,
-    open: true
-  }
+    open: true,
+  },
 });
