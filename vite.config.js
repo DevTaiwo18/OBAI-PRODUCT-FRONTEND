@@ -11,41 +11,23 @@ export default defineConfig({
             '@constants': path.resolve('./src/constants'),
             '@images': path.resolve('./src/assets/images'),
             '@icons': path.resolve('./src/assets/icons'),
-            '@logos': path.resolve('./src/assets/logos'), // Ensure the logos alias is added
+            '@logos': path.resolve('./src/assets/logos'),
             '@pages': path.resolve('./src/pages'),
             '@layout': path.resolve('./src/layout'),
-            '@redux': path.resolve('./src/redux')
+            '@redux': path.resolve('./src/redux'),
         }
     },
     plugins: [
         react({
-            jsxRuntime: 'classic' // Using classic JSX runtime
+            jsxRuntime: 'classic'
         })
     ],
-    esbuild: {
-        loader: 'jsx'
-    },
-    optimizeDeps: {
-        esbuildOptions: {
-            loader: {
-                '.js': 'jsx'
-            }
-        }
-    },
-    base: './', // Set base to relative path for production
-
-    // The root directory of the project.
-    root: './',
-
-    // Specify the directory for the built files.
     build: {
-        outDir: 'dist', // Vercel expects 'dist' as the output directory
+        outDir: 'dist', // This is what Render expects for a static site.
         sourcemap: false,
         minify: true,
-        assetsDir: 'assets', // Ensure assets are stored correctly
+        assetsDir: 'assets', // Ensure assets are stored correctly.
     },
-
-    // Configure the development server.
     server: {
         port: 3000,
         open: true
