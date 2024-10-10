@@ -7,6 +7,7 @@ import OtpScreen from '../pages/Auth/OtpScreen';
 import ClaimWrapper from '../pages/ClaimWrapper/ClaimWrapper';
 import LandingPage from '../pages/LandingPage/LandingPage';
 import UpdatePassword from '../pages/Auth/UpdatePassword';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from 'react-redux';
 
 // Lazy load the components for code splitting
@@ -27,7 +28,13 @@ const MainRoutes = () => {
     const isLoading = useSelector((state) => state.auth.isLoading); // Add a loading state if available
 
     // Fallback loader during lazy loading of components
-    const FallbackLoader = () => <div>Loading...</div>;
+    const FallbackLoader = () => (
+        <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+            <div className="spinner-border" role="status" style={{ color: 'rgb(255,163,0)' }}>
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    );
 
     if (isLoading) {
         return <FallbackLoader />;  // You can show a loading spinner here
