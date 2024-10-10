@@ -23,6 +23,10 @@ const authSlice = createSlice({
             state.loading = false;
             state.error = null;
             state.isLoggedIn = false;
+
+            // Clear localStorage on logout
+            localStorage.removeItem('userToken');
+            localStorage.removeItem('userInfo');
         },
         loginWithoutAPI: (state, { payload }) => {
             state.isLoggedIn = true;
@@ -39,7 +43,7 @@ const authSlice = createSlice({
                 state.userToken = null;
                 state.loading = true;
                 state.error = null;
-                state.isLoggedIn = true;
+                state.isLoggedIn = false;
             })
             .addCase(loginUser.fulfilled, (state, { payload }) => {
                 state.userInfo = payload.user;
@@ -47,6 +51,10 @@ const authSlice = createSlice({
                 state.loading = false;
                 state.error = null;
                 state.isLoggedIn = true;
+
+                // Store the token and user info in localStorage
+                localStorage.setItem('userToken', payload.token);
+                localStorage.setItem('userInfo', JSON.stringify(payload.user));
             })
             .addCase(loginUser.rejected, (state, { payload }) => {
                 state.userInfo = null;
@@ -54,6 +62,10 @@ const authSlice = createSlice({
                 state.loading = false;
                 state.error = payload;
                 state.isLoggedIn = false;
+
+                // Remove any existing data from localStorage on failed login
+                localStorage.removeItem('userToken');
+                localStorage.removeItem('userInfo');
             });
     }
 });
